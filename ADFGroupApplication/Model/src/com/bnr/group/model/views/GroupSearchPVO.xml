@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="GroupSearchPVO"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  RowClass="com.bnr.group.model.views.GroupSearchPVORowImpl"
+  ComponentClass="com.bnr.group.model.views.GroupSearchPVOImpl"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isProgrammatic" Value="true"/>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|Prog|VarAccess"/>
+    <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.bnr.group.model.views.GroupSearchPVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewAccessor
+    Name="GroupSearchVO1"
+    ViewObjectName="com.bnr.group.model.views.GroupSearchVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_GroupCode"
+    ListVOName="GroupSearchVO1"
+    NullValueFlag="none"
+    MRUCount="0"
+    ComboRowCountHint="10">
+    <AttrArray Name="AttrNames">
+      <Item Value="GroupCode"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="GroupId"/>
+      <Item Value="GroupName"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GroupCode"/>
+      <Item Value="GroupId"/>
+      <Item Value="GroupName"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GroupCode"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ViewAttribute
+    Name="GroupId"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Integer"
+    ColumnType="$none$"
+    SQLType="INTEGER"/>
+  <ViewAttribute
+    Name="GroupCode"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="$none$"
+    LOVName="LOV_GroupCode"
+    SQLType="VARCHAR">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="GroupName"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="$none$"
+    SQLType="VARCHAR"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="GroupId"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.bnr.group.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

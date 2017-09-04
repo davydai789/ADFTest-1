@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="untitled1.jspx" id="d1">
+            <af:messages id="m1"/>
+            <af:form id="f1">
+                <af:table value="#{bindings.GroupSearchPVO.collectionModel}" var="row"
+                          rows="#{bindings.GroupSearchPVO.rangeSize}"
+                          emptyText="#{bindings.GroupSearchPVO.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0" fetchSize="#{bindings.GroupSearchPVO.rangeSize}" id="t1"
+                          rowSelection="single" autoHeightRows="1">
+                    <af:column headerText="#{bindings.GroupSearchPVO.hints.GroupId.label}" id="c1">
+                        <af:inputText value="#{row.bindings.GroupId.inputValue}"
+                                      label="#{bindings.GroupSearchPVO.hints.GroupId.label}"
+                                      required="#{bindings.GroupSearchPVO.hints.GroupId.mandatory}"
+                                      columns="#{bindings.GroupSearchPVO.hints.GroupId.displayWidth}"
+                                      maximumLength="#{bindings.GroupSearchPVO.hints.GroupId.precision}"
+                                      shortDesc="#{bindings.GroupSearchPVO.hints.GroupId.tooltip}" id="it1"
+                                      autoSubmit="true">
+                            <f:validator binding="#{row.bindings.GroupId.validator}"/>
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.GroupSearchPVO.hints.GroupId.format}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.GroupSearchPVO.hints.GroupCode.label}" id="c2">
+                        <af:selectOneChoice value="#{row.bindings.GroupCode.inputValue}"
+                                            label="#{row.bindings.GroupCode.label}"
+                                            required="#{bindings.GroupSearchPVO.hints.GroupCode.mandatory}"
+                                            shortDesc="#{bindings.GroupSearchPVO.hints.GroupCode.tooltip}" id="soc1"
+                                            autoSubmit="true">
+                            <f:selectItems value="#{row.bindings.GroupCode.items}" id="si1"/>
+                            <f:validator binding="#{row.bindings.GroupCode.validator}"/>
+                        </af:selectOneChoice>
+                    </af:column>
+                    <af:column headerText="#{bindings.GroupSearchPVO.hints.GroupName.label}" id="c3">
+                        <af:inputText value="#{row.bindings.GroupName.inputValue}"
+                                      label="#{bindings.GroupSearchPVO.hints.GroupName.label}"
+                                      required="#{bindings.GroupSearchPVO.hints.GroupName.mandatory}"
+                                      columns="#{bindings.GroupSearchPVO.hints.GroupName.displayWidth}"
+                                      maximumLength="#{bindings.GroupSearchPVO.hints.GroupName.precision}"
+                                      shortDesc="#{bindings.GroupSearchPVO.hints.GroupName.tooltip}" id="it2"
+                                      autoSubmit="true">
+                            <f:validator binding="#{row.bindings.GroupName.validator}"/>
+                        </af:inputText>
+                    </af:column>
+                </af:table>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

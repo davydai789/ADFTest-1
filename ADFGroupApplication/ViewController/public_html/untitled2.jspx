@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="untitled2.jspx" id="d1">
+            <af:messages id="m1"/>
+            <af:form id="f1">
+                <af:inputListOfValues id="groupCodeId" popupTitle="Search and Select: #{bindings.GroupCode.hints.label}"
+                                      value="#{bindings.GroupCode.inputValue}" label="#{bindings.GroupCode.hints.label}"
+                                      model="#{bindings.GroupCode.listOfValuesModel}"
+                                      required="#{bindings.GroupCode.hints.mandatory}"
+                                      columns="#{bindings.GroupCode.hints.displayWidth}"
+                                      shortDesc="#{bindings.GroupCode.hints.tooltip}">
+                    <f:validator binding="#{bindings.GroupCode.validator}"/>
+                </af:inputListOfValues>
+                <af:inputText value="#{bindings.GroupName.inputValue}" label="#{bindings.GroupName.hints.label}"
+                              required="#{bindings.GroupName.hints.mandatory}"
+                              columns="#{bindings.GroupName.hints.displayWidth}"
+                              maximumLength="#{bindings.GroupName.hints.precision}"
+                              shortDesc="#{bindings.GroupName.hints.tooltip}" id="it1">
+                    <f:validator binding="#{bindings.GroupName.validator}"/>
+                </af:inputText>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

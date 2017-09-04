@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24" id="untitled1PageDef"
+                Package="com.bnr.group.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="GroupSearchPVO" RangeSize="25" DataControl="AppModuleAMDataControl" id="GroupSearchPVOIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="GroupSearchPVOIterator" id="GroupSearchPVO">
+      <nodeDefinition DefName="com.bnr.group.model.views.GroupSearchPVO" Name="GroupSearchPVO0">
+        <AttrNames>
+          <Item Value="GroupId"/>
+          <Item Value="GroupCode"/>
+          <Item Value="GroupName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

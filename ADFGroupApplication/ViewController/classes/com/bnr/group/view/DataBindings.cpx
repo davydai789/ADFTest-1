@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.12.24" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.bnr.group.view" ClientType="Generic">
+  <pageMap>
+    <page path="/untitled1.jspx" usageId="com_bnr_group_view_untitled1PageDef"/>
+    <page path="/untitled2.jspx" usageId="com_bnr_group_view_untitled2PageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_bnr_group_view_untitled1PageDef" path="com.bnr.group.view.pageDefs.untitled1PageDef"/>
+    <page id="com_bnr_group_view_untitled2PageDef" path="com.bnr.group.view.pageDefs.untitled2PageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleAMDataControl" Package="com.bnr.group.model.service"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>
